@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration | Campus Events Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hidden checkbox controls dark mode (see style.css) -->
+  <input type="checkbox" id="theme" class="theme-toggle" aria-label="Dark mode">
+  <div class="site">
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="site-name">Campus Events Guide</p>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="event-details.html">Details</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="registration.html">Register</a></li>
+        </ul>
+      </nav>
+      <label for="theme" class="toggle-label">Dark / Light</label>
+    </div>
+  </header>
+  <main>
+    <h1>Register for Campus Innovation Fair</h1>
+    <p><strong>Saturday, 14 November 2026</strong> &middot; 10:00 – 16:00 &middot; Student Union Hall</p>
+    <section>
+      <h2>Registration form</h2>
+      <form action="#" method="post">
+        <div><label for="name">Attendee name</label>
+        <input type="text" id="name" name="name" required maxlength="50" pattern="[A-Za-z ]{2,50}" title="Letters and spaces only"></div>
+        <div><label for="email">Email</label>
+        <input type="email" id="email" name="email" required maxlength="60"></div>
+        <div><label for="site">Project website (optional)</label>
+        <input type="url" id="site" name="site" placeholder="https://example.com"></div>
+        <div><label for="guests">Number of guests (0-3)</label>
+        <input type="number" id="guests" name="guests" min="0" max="3" value="0" required></div>
+        <div><label for="interest">Interest level (1-10)</label>
+        <input type="range" id="interest" name="interest" min="1" max="10" value="5"></div>
+        <div><label for="dob">Date of birth</label>
+        <input type="date" id="dob" name="dob" required></div>
+        <div><label for="arrival">Arrival time</label>
+        <input type="time" id="arrival" name="arrival" min="10:00" max="16:00" required></div>
+        <div><label for="badge">Badge colour</label>
+        <input type="color" id="badge" name="badge" value="#1f5fbf"></div>
+        <div><label for="idfile">Upload student ID photo</label>
+        <input type="file" id="idfile" name="idfile" accept="image/*"></div>
+        <div><label for="choice">Event choice</label>
+        <select id="choice" name="choice" required>
+          <option value="">Choose...</option>
+          <option>Campus Innovation Fair</option><option>Open-Air Film Night</option><option>Charity Fun Run</option>
+        </select></div>
+        <fieldset>
+          <legend>Ticket type</legend>
+          <label><input type="radio" name="ticket" value="student" required> Student (free)</label>
+          <label><input type="radio" name="ticket" value="guest"> Guest ($5)</label>
+        </fieldset>
+        <div><label for="access">Access needs</label>
+        <textarea id="access" name="access" rows="3" maxlength="200" placeholder="Wheelchair access, sign language..."></textarea></div>
+        <label class="check"><input type="checkbox" name="agree" required> I agree to follow the campus event rules</label>
+        <button class="button" type="submit">Register</button>
+      </form>
+    </section>
+    <section>
+      <h2>Event contact</h2>
+      <address>
+        Student Activities Office, Room 12<br>
+        Email: <a href="mailto:events@campus.example">events@campus.example</a><br>
+        Phone: <a href="tel:+20255501234">+20 2 5550 1234</a>
+      </address>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>&copy; 2026 Campus Events Guide</p>
+    <ul class="social">
+      <li><a href="https://www.facebook.com/">Facebook</a></li>
+      <li><a href="https://www.instagram.com/">Instagram</a></li>
+      <li><a href="https://www.youtube.com/">YouTube</a></li>
+    </ul>
+  </footer>
+  </div>
+</body>
+</html>

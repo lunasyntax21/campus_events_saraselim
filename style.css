@@ -1,0 +1,83 @@
+/* ---------- Colour palette (CSS variables) ---------- */
+.site{--bg:#f4f7fb;--text:#1b2433;--card:#ffffff;--accent:#1f5fbf;--accent-text:#ffffff;--border:#cfd8e6;--muted:#53607a;
+  background:var(--bg);color:var(--text);min-height:100vh;font-family:Arial,Helvetica,sans-serif;line-height:1.6;font-size:1rem}
+/* Dark mode: a hidden checkbox sits before .site; when it is checked, the variables are replaced (no JavaScript) */
+.theme-toggle:checked ~ .site{--bg:#10151f;--text:#eef2f9;--card:#1b2332;--accent:#6ea8ff;--accent-text:#10151f;--border:#34415a;--muted:#b4bfd4}
+.theme-toggle{position:absolute;opacity:0}
+.theme-toggle:focus + .site .toggle-label{outline:3px solid var(--accent)}
+*{box-sizing:border-box}
+body{margin:0}
+img,audio{max-width:100%}
+img{height:auto;display:block}
+a{color:var(--accent)}
+
+/* ---------- Header and navigation (Flexbox) ---------- */
+.site-header{background:var(--card);border-bottom:3px solid var(--accent)}
+.header-inner{max-width:1100px;margin:auto;padding:.8rem 1rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6rem}
+.site-name{margin:0;font-size:1.3rem;font-weight:bold;color:var(--accent)}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.main-nav a{display:block;padding:.4rem .8rem;border-radius:6px;text-decoration:none;color:var(--text);transition:background .3s,color .3s}
+.main-nav a:hover,.main-nav a:focus{background:var(--accent);color:var(--accent-text)}
+.toggle-label{cursor:pointer;border:2px solid var(--accent);border-radius:20px;padding:.2rem .8rem;font-size:.9rem;transition:background .3s}
+.toggle-label:hover{background:var(--accent);color:var(--accent-text)}
+
+/* ---------- Page layout ---------- */
+main{max-width:1100px;margin:auto;padding:1rem}
+h1{font-size:1.8rem;margin:.5rem 0}
+h2{font-size:1.4rem;border-left:5px solid var(--accent);padding-left:.6rem;margin-top:2rem}
+h3{margin:.3rem 0}
+.intro{background:var(--accent);color:var(--accent-text);padding:1.2rem;border-radius:10px}
+.intro h1{margin-top:0}
+.muted{color:var(--muted)}
+
+/* ---------- Event cards (Grid) ---------- */
+.card-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.card-body{padding:.8rem 1rem 1rem}
+.card-grid .card:hover h3 a{text-decoration:underline}      /* complex selector */
+.card > .card-body p:first-of-type{color:var(--muted);margin:.2rem 0}
+.tag{display:inline-block;background:var(--accent);color:var(--accent-text);border-radius:4px;padding:0 .5rem;font-size:.8rem}
+
+/* ---------- Buttons ---------- */
+.button{display:inline-block;background:var(--accent);color:var(--accent-text);padding:.6rem 1.2rem;border:0;border-radius:6px;font-size:1rem;text-decoration:none;cursor:pointer;transition:opacity .3s,transform .3s}
+.button:hover,.button:focus{opacity:.85;transform:scale(1.04)}
+
+/* ---------- Detail page ---------- */
+.detail{display:grid;grid-template-columns:1fr;gap:1rem}
+.facts dt{font-weight:bold}
+.facts dd{margin:0 0 .5rem}
+
+/* ---------- Table ---------- */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--card)}
+th,td{padding:.6rem;border:1px solid var(--border);text-align:left}
+th{background:var(--accent);color:var(--accent-text)}
+tr:nth-child(even) td{background:var(--bg)}
+tr.featured td{font-weight:bold}
+
+/* ---------- Forms ---------- */
+form{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem;display:flex;flex-direction:column;gap:.9rem}
+label,legend{font-weight:bold;display:block;margin-bottom:.2rem}
+fieldset{border:1px solid var(--border);border-radius:6px}
+fieldset label,.check{font-weight:normal;display:inline-block;margin-right:1rem}
+input,select,textarea{width:100%;max-width:100%;padding:.5rem;border:2px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font:inherit;transition:border-color .3s}
+input[type=checkbox],input[type=radio]{width:auto}
+input[type=color]{height:2.5rem;padding:.1rem}
+input:hover,select:hover,textarea:hover,input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
+input:invalid:not(:placeholder-shown){border-color:#d33}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--card);border-top:3px solid var(--accent);margin-top:2rem;padding:1rem;text-align:center}
+.social{list-style:none;padding:0;display:flex;justify-content:center;flex-wrap:wrap;gap:1rem}
+
+/* ---------- Responsive: tablet and desktop ---------- */
+@media (min-width:600px){
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  main{padding:1.5rem}
+}
+@media (min-width:960px){
+  .card-grid{grid-template-columns:repeat(3,1fr)}
+  .detail{grid-template-columns:1fr 1fr}
+  h1{font-size:2.3rem}
+}
